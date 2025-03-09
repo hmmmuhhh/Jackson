@@ -1,0 +1,33 @@
+plugins {
+  id 'java'
+  id 'war'
+}
+
+version '1.0-SNAPSHOT'
+
+repositories {
+  mavenCentral()
+}
+
+ext {
+  junitVersion = '5.11.0'
+}
+
+tasks.withType(JavaCompile).configureEach {
+  options.encoding = 'UTF-8'
+}
+
+dependencies {
+  // Servlet API (Java EE 8)
+  compileOnly 'javax.servlet:javax.servlet-api:4.0.1'
+  // Jackson
+  implementation 'com.fasterxml.jackson.core:jackson-databind:2.15.2'
+
+  implementation 'org.apache.tomcat:tomcat-servlet-api:11.0.2'
+  implementation 'org.apache.tomcat.embed:tomcat-embed-core:11.0.2'
+
+  testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:${junitVersion}")
+}
+
+test {
+useJUnitPlatform()}

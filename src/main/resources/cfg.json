@@ -1,0 +1,10 @@
+{
+  "configVersion": "1.0.0",
+  "buildCount": 42,
+  "author": "YourName",
+  "appMode": "DEV",
+  "encoding": {
+    "utf": 8,
+    "unixVersion": "U"
+  }
+}
